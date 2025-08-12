@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>flowers</title>
-<script>
-   window.onbeforeunload = function() {
-    var audio = document.getElementById("myAudio");
-    audio.pause();
-  }
+<audio id="myAudio" autoplay>
+  <source src="burnomars.mp3" type="audio/mpeg">
+</audio>
 
-  window.onload = function() {
-    var audio = document.getElementById("myAudio");
-    audio.play();
-  }
+<script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("myAudio");
+    audio.play().catch(() => {
+      // If blocked, try again after short delay
+      setTimeout(() => {
+        audio.play().catch(err => {
+          console.warn("Autoplay blocked by browser:", err);
+        });
+      }, 1000);
+    });
+  });
 </script>
 </head>
 <body class="container">
