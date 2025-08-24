@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>flowers</title>
-<audio id="myAudio">
+<audio id="myAudio" autoplay loop>
   <source src="burnomars.mp3" type="audio/mpeg">
 </audio>
 
-<button id="playBtn">Play Music</button>
-
 <script>
   const audio = document.getElementById("myAudio");
-  const playBtn = document.getElementById("playBtn");
 
-  playBtn.addEventListener("click", () => {
+  window.addEventListener("load", () => {
     audio.play().catch(err => {
-      console.warn("Playback failed:", err);
+      console.warn("Autoplay blocked by browser:", err);
     });
   });
 </script>
