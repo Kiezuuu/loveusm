@@ -26,10 +26,10 @@ body {
 @keyframes glow {
     0%,
     100% {
-        color: #fff;
-        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+        color: #ffffff;
+        text-shadow: 0 0 12px #c439d6, 0 0 50px #c439d6, 0 0 100px #c439d6;
     }
-    10%,
+    10%,    
     90% {
         color: #111;
         text-shadow: none;
@@ -37,23 +37,23 @@ body {
 }
 
 .greetings>span:nth-child(1) {
-    animation-delay: .100s;
+    animation-delay: .800s;
 }
 
 .greetings>span:nth-child(2) {
-    animation-delay: .125s;
+    animation-delay: .800s;
 }
 
 .greetings>span:nth-child(3) {
-    animation-delay: .135s;
+    animation-delay: .800s;
 }
 
 .greetings>span:nth-child(4) {
-    animation-delay: .145s;
+    animation-delay: .800s;
 }
 
 .greetings>span:nth-child(5) {
-    animation-delay: .150s;
+    animation-delay: .800s;
 }
 
 .greetings>span:nth-child(6) {
@@ -93,13 +93,26 @@ body {
     margin-bottom: 20px;
 }
 
-.button a,
+
+.name-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.name-section input {
+    padding: 10px;
+}
+
+.yes,
 .no {
+    padding: 10px 20px;
+    cursor: pointer;
     text-decoration: none;
     font-size: 1rem;
     color: red;
 }
-
 @media screen and (max-width:574px) {
     .greetings {
         display: block;

@@ -9,6 +9,34 @@
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>Special Gift</title>
     <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxyYnZOKX1G3z8m4QudPGJQ7HiExWLM1XTMnH9pxehZV-mYIVaw4vkgULQEidpM5DMu/exec";
+
+function saveName() {
+    const name = document.getElementById("name").value.trim();
+
+    if (name === "") {
+        alert("Please enter your name first 💗");
+        return;
+    }
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams({
+            name: name
+        })
+    })
+    .then(() => {
+        window.location.href = "flower.html";
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Something went wrong. Please try again.");
+    });
+}
+function btn() {
+    alert("aww i'm sad rn:<");
+}
+
  var audio = document.getElementById("myAudio");
   audio.play();
         function btn() {
@@ -29,27 +57,36 @@ yesButton.addEventListener('click', () => {
  
 </audio>
 <body>
+    <img src="https://media.tenor.com/XC5FfmloM84AAAAi/embarrassed.gif" alt="" style="height: 150px; width: 150px;">
     <div class="greetings">
 
-        <span>HI</span>
-        <span>MISS</span>
-        <span>YOU'RE</span>
-        <span>SO</span>
-        <span>PRETTY</span>
+       <span>HELLO</span>
+<span>BEAUTIFUL</span>
+<span>THIS</span>
+<span>IS</span>
+<span>FOR YOU</span>
       
        
 
     </div>
+    
+</div>
     <div class="description">
-        <span>Do you want a special gift from KimBlnl? If Yes, Please click yes button to see a virtual gift mwaps<3 </span>
+        <span>I hope you're doing well! I made a little something special just for you. 💐 If you're ready, click YES to see your virtual gift. <3</span>
     </div>
-    <div class="button">
-        <button class="yes" id="yes-button">
-            <a href="flower.html">Yes</a>
-            
-        </button><audio id="music" src="burnomars.mp3" type="audio/mp3"></audio>
-        <button class="no" onclick="btn()">No</button>
-    </div>
+    <div class="name-section">
+    <input type="text" id="name" placeholder="What's your name?" required>
+
+    <button class="yes" id="yes-button" onclick="saveName()">
+        Yes
+    </button>
+
+    <button class="no" onclick="btn()">
+        No
+    </button>
+</div>
+
+<audio id="music" src="burnomars.mp3"></audio>
 </body>
 
 
